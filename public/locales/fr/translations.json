@@ -1,0 +1,326 @@
+{
+  "nav": {
+    "menus": {
+      "maison": "accueil",
+      "offres": "offres",
+      "demandes": "Demandes",
+      "edit": "Ajouter une annonce",
+      "shop": "Boutique",
+      "lng": {
+        "en": "EN",
+        "fr": "FR"
+      },
+      "profile": {
+        "account": "Mon compte",
+        "logout": "Déconnexion"
+      }
+    }
+  },
+  "home": {
+    "title": "Bienvenue sur le meilleur site d'annonces du moment",
+    "description": {
+      "part1": "Vous pouvez créer des annonces et vendre vos produits gratuitement",
+      "part2": "Postez vos souhaits ou créez des alertes et vous serez averti ou contacté en temps réel"
+    }
+  },
+  "edit": {
+    "title1": "Créer une annonce",
+    "title2": "Modifier une annonce",
+    "form": {
+      "category": {
+        "label": "Catégorie",
+        "selected": "Choisissez votre option",
+        "categories": {
+          "job": {
+            "title": "EMPLOI",
+            "job": "Offres d'emploi",
+            "subtitle": "Intitulé du poste"
+          },
+          "vehicule": {
+            "title": "VEHICULES",
+            "car": "Voitures",
+            "moto": "Motos",
+            "caravanning": "Caravanning",
+            "utilities": "Utilitaires",
+            "autoEquipment": "Equipement Auto",
+            "motorcycleEquipment": "Equipement Moto",
+            "caravanningEquipment": "Equipement Caravaning",
+            "boating": "Nautisme",
+            "equipmentNautisme": "Equipement Nautisme"
+          },
+          "immovable": {
+            "title": "IMMOBILIER",
+            "sales": "Ventes immobilières",
+            "rentals": "Locations",
+            "housemates": "Colocations",
+            "officesAndShops": "Bureaux Commerces"
+          },
+          "vacation": {
+            "title": "VACANCES",
+            "gitesrantals": "Locations Gîtes",
+            "guestRooms": "Chambres d'hôtes",
+            "campsites": "Campings",
+            "hotels": "Hôtels",
+            "unusualAccommodations": "Hébergements insolites"
+          },
+          "multimedia": {
+            "title": "MULTIMEDIA",
+            "informatique": "Informatique",
+            "gaming": "Consoles & Jeux vidéo",
+            "imageAndSon": "Image & Son",
+            "phone": "Téléphonie"
+          },
+          "house": {
+            "title": "MAISON",
+            "furnishing": "Ameublement",
+            "appliance": "Electroménager",
+            "tables": "Arts de la table",
+            "dcoration": "Décoration",
+            "lines": "Linge de maison",
+            "housing": "Bricolage",
+            "gardening": "Jardinage",
+            "clothing": "Vêtements",
+            "shoes": "Chaussures",
+            "accessories": "Accessoires & Bagagerie",
+            "finery": "Montres & Bijoux",
+            "babyequipment": "Equipement bébé",
+            "babyclothes": "Vêtements bébé"
+          },
+          "hobbies": {
+            "title": "LOISIRS",
+            "movies": "DVD / Films",
+            "music": "CD / Musique",
+            "books": "Livres",
+            "animals": "Animaux",
+            "bicycles": "Vélos",
+            "sports": "Sports",
+            "instruments": "Instruments de musique",
+            "collection": "Collection",
+            "toys": "Jeux Jouets",
+            "wins": "Vins Gastronomie"
+          },
+          "equipments": {
+            "title": "MATERIEL PROFESSIONNEL",
+            "agriculture": "Matériel Agricole",
+            "transport": "Transport - Manutention",
+            "btp": "BTP - Chantier Gros-oeuvre",
+            "tools": "Outillage - Matériaux 2nd-oeuvre",
+            "industries": "Équipements Industriels",
+            "restaurenthotel": "Restauration - Hôtellerie",
+            "desk": "Fournitures de Bureau",
+            "markets": "Commerces & Marchés",
+            "medical": "Matériel Médical"
+          },
+          "services": {
+            "title": "SERVICES",
+            "services": "Prestations de services",
+            "ticketing": "Billetterie",
+            "events": "Evénements",
+            "teaching": "Cours particuliers",
+            "carpooling": "Covoiturage"
+          },
+          "others": {
+            "title": "AUTRES",
+            "others": "Autres"
+          }
+        }
+      },
+      "categories": {
+        "1": "Offres d'emploi",
+        "2": "Voitures",
+        "3": "motos",
+        "4": "Caravaning",
+        "5": "Utilitaires",
+        "6": "Auto Equipment",
+        "7": "Equipement moto",
+        "8": "Equipement de caravaning",
+        "9": "Navigation de plaisance",
+        "10": "Equipement Nautisme",
+        "11": "Ventes",
+        "12": "Location",
+        "13": "Colocataires",
+        "14": "Bureaux commerciaux",
+        "15": "Locations de vacances",
+        "16": "Chambres d'hôtes",
+        "17": "Campings",
+        "18": "Hôtels",
+        "19": "Hébergements insolites",
+        "20": "Informatique",
+        "21": "Consoles et jeux vidéos",
+        "22": "Image et son",
+        "23": "Téléphonie",
+        "24": "Ameublement",
+        "25": "Appareils",
+        "26": "Vaisselle",
+        "27": "Décoration",
+        "28": "Lin",
+        "29": "bricolage",
+        "30": "Jardinage",
+        "31": "Vêtements",
+        "32": "Chaussures",
+        "33": "Accessoires et bagages",
+        "34": "Montres & Bijoux",
+        "35": "équipement bébé",
+        "36": "Vêtements pour bébé",
+        "37": "DVD / Films",
+        "38": "CD / Musique",
+        "39": "Livres",
+        "40": "Animaux",
+        "41": "Vélos",
+        "42": "Sports",
+        "43": "instruments de musique",
+        "44": "Collection",
+        "45": "Jeux de jouets",
+        "46": "Vins de gastronomie",
+        "47": "Matériel agricole",
+        "48": "Transport - Manutention",
+        "49": "Construction - chantier",
+        "50": "Outils - Matériaux 2e oeuvre",
+        "51": "Equipement industriel",
+        "52": "Restauration - Hôtels",
+        "53": "Fournitures de bureau",
+        "54": "Boutiques et marchés",
+        "55": "équipement médical",
+        "56": "Services",
+        "57": "Ticket",
+        "58": "Événements",
+        "59": "Cours particuliers",
+        "60": "Covoiturage",
+        "61": "Autre"
+      },
+      "fuels":{
+        "1":"Ddiesel",
+        "2":"Electrique"
+      },
+      "gearBox":{
+        "1":"Manual",
+        "2":"Automatique"
+      },
+      "immovableTypes": {
+        "1": "House",
+        "2":"Appartment"
+      },
+      "isEquiped": {
+        "1": "Equiped",
+        "2":"Non Equiped"
+      },
+      "swimingPoolOptions": {
+        "1": "Oui",
+        "2": "Non"
+      },
+      "types": {
+        "1": "Offer",
+        "2": "Demmande"
+      },
+      "marks": {
+        "1": "Abarth",
+        "2": "Aleko",
+        "3": "AlfaRomeo",
+        "4": "Alpina",
+        "5": "Aro",
+        "6": "Artega",
+        "7": "AstonMartin",
+        "8": "Autobianchi",
+        "9": "Auverland",
+        "10": "Bentley",
+        "11": "Bertone",
+        "12": "BluecarGroupeBollore",
+        "13": "Buick",
+        "14": "Cadillac",
+        "15": "Chevrolet",
+        "16": "Chrysler",
+        "17": "Corvette",
+        "18": "Dacia",
+        "19": "Daewoo",
+        "20": "Daihatsu",
+        "21": "Dangel",
+        "22": "DeLaChapelle",
+        "23": "Dodge",
+        "24": "Donkervoort",
+        "25": "Dr,",
+        "26": "Ds,",
+        "27": "Ferrari,",
+        "28": "Fisker,",
+        "29": "Gme",
+        "30": "Honda",
+        "31": "Hummer",
+        "32": "Hyundai",
+        "33": "Infiniti",
+        "34": "Innocenti",
+        "35": "Isuzu",
+        "36": "Iveco",
+        "37": "Jaguar",
+        "38": "Jeep",
+        "39": "Kia",
+        "40": "Lada",
+        "41": "Lamborghini",
+        "42": "Lancia",
+        "43": "LandRover",
+        "44": "Lexus",
+        "45": "Lotus",
+        "46": "Mahindra",
+        "47": "Maruti",
+        "48": "Maserati",
+        "49": "Mastretta",
+        "50": "Maybach",
+        "51": "Mazda",
+        "52": "Mclaren",
+        "53": "Mega",
+        "54": "Mg",
+        "55": "Mia",
+        "56": "Mini",
+        "57": "Mitsubishi",
+        "58": "Morgan",
+        "59": "Nissan",
+        "60": "Pgo",
+        "61": "Piaggio",
+        "62": "Polski/fso",
+        "63": "Pontiac",
+        "64": "Porsche",
+        "65": "Proton",
+        "66": "Rolls-royce",
+        "67": "Rover",
+        "68": "Saab",
+        "69": "Santana",
+        "70": "Seat",
+        "71": "Shuanghuan",
+        "72": "Skoda",
+        "73": "Smart",
+        "74": "Ssangyong",
+        "75": "Subaru",
+        "76": "Suzuki",
+        "77": "Talbot",
+        "78": "Tavria",
+        "79": "Tesla",
+        "80": "Toyota",
+        "81": "Tvr",
+        "82": "Venturi",
+        "83": "Volvo",
+        "84": "Autres"
+      },
+      "title": {
+        "label": "Titre"
+      },
+      "profile": {
+        "title": "Vous etes",
+        "radio": {
+          "particular": "Particulier",
+          "professional": "Professionnel"
+        }
+      },
+      "type": {
+        "title": "Type d'annonce",
+        "radio": {
+          "offers": "Offers",
+          "demandes": "Demandes"
+        }
+      },
+      "description": {
+        "label": "Description"
+      },
+      "amount": {
+        "label": "Prix"
+      }
+    }
+  }
+}
