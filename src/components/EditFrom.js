@@ -280,7 +280,7 @@ class EditFrom extends Component {
         let announcement = this.state.announcement;
         let field = event.target.name;
         announcement[field] = event.target.value;
-        announcement.shortDescription =  event.target.value.substring(0, 80) + " ..."
+        announcement.shortDescription = event.target.value.substring(0, 80) + " ..."
         this.setState({ announcement: Object.assign({}, announcement) });
     }
 
@@ -370,13 +370,13 @@ class EditFrom extends Component {
     }
 
     render() {
-        const { t, marks } = this.props;
+        const { t, marks, lng } = this.props;
 
         return (
             <div>
                 <Card wide>
                     <CardBody cascade>
-                        <CardTitle>Announcement</CardTitle>
+                        <CardTitle>{t('edit.form.labels.announcement')}</CardTitle>
                         <form>
                             <MDBContainer>
                                 <MDBRow>
@@ -384,6 +384,7 @@ class EditFrom extends Component {
                                         <SelectInput
                                             handelCategorySelectChange={this.handelCategorySelectChange}
                                             selectedValue={this.state.announcement.category.toString()}
+                                            lng={lng}
                                         />
                                     </MDBCol>
                                     <MDBCol md="6">
@@ -398,6 +399,7 @@ class EditFrom extends Component {
                                 </MDBRow>
                                 <Criteria
                                     marks={marks}
+                                    lng={lng}
                                     announcement={this.state.announcement}
                                     handelMarksSelectChange={this.handelMarksSelectChange}
                                     handleCriteriaInputChange={this.handleCriteriaInputChange}
@@ -461,7 +463,8 @@ class EditFrom extends Component {
                                 </MDBRow>
                                 <MDBRow>
                                     <MDBCol md="12">
-                                        <MDBInput label={t('edit.form.amount.label')}
+                                        <MDBInput
+                                            label={t('edit.form.amount.label')}
                                             type="text"
                                             name="amount"
                                             type="number"
@@ -494,13 +497,13 @@ class EditFrom extends Component {
                 </Card>
                 <Card wide style={{ marginTop: 30 }}>
                     <CardBody cascade>
-                        <CardTitle>Location</CardTitle>
+                        <CardTitle>{t('edit.form.labels.location')}</CardTitle>
                         <MDBContainer>
                             <MDBRow>
                                 <MDBCol md="6">
                                     <MDBInput
                                         type="text"
-                                        label="City"
+                                        label={t('edit.form.labels.city')}
                                         value={this.state.announcement.location.city}
                                         onChange={this.handleLocationInputChange}
                                         name="city" />
@@ -508,7 +511,7 @@ class EditFrom extends Component {
                                 <MDBCol md="6">
                                     <MDBInput
                                         type="number"
-                                        label="Zipcode"
+                                        label={t('edit.form.labels.zipCode')}
                                         value={this.state.announcement.location.zipCode.toString()}
                                         onChange={this.handleLocationInputChange}
                                         name="zipCode" />
@@ -518,7 +521,7 @@ class EditFrom extends Component {
                                 <MDBCol md="3">
                                     <MDBInput
                                         type="number"
-                                        label="Street number"
+                                        label={t('edit.form.labels.numberOfStreet')}
                                         value={this.state.announcement.location.numberOfStreet.toString()}
                                         onChange={this.handleLocationInputChange}
                                         name="numberOfStreet" />
@@ -526,32 +529,29 @@ class EditFrom extends Component {
                                 <MDBCol md="9">
                                     <MDBInput
                                         type="text"
-                                        label="Name of the street"
+                                        label={t('edit.form.labels.streetName')}
                                         value={this.state.announcement.location.streetName}
                                         onChange={this.handleLocationInputChange}
                                         name="streetName" />
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol>
-                                    <MDBCol md="12">
-                                        <MDBInput
-                                            type="text"
-                                            label="Address"
-                                            value={this.state.announcement.location.address}
-                                            onChange={this.handleLocationInputChange}
-                                            name="address" />
-                                    </MDBCol>
+                                <MDBCol md="12">
+                                    <MDBInput
+                                        type="text"
+                                        label={t('edit.form.labels.address')}
+                                        value={this.state.announcement.location.address}
+                                        onChange={this.handleLocationInputChange}
+                                        name="address" />
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
                                 <MDBCol md="12">
                                     <MDBInput
                                         type="text"
-                                        label="Place known as"
+                                        label={t('edit.form.labels.placeKnownAs')}
                                         value={this.state.announcement.location.placeKnownAs}
-                                        onChange={this.handleLocationInputChange}
-                                        name="placeKnownAs" />
+                                        onChange={this.handleLocationInputChange} />
                                 </MDBCol>
                             </MDBRow>
                             <MDBRow>
@@ -559,6 +559,7 @@ class EditFrom extends Component {
                                     <MDBInput
                                         type="text"
                                         label="Country"
+                                        label={t('edit.form.labels.country')}
                                         value={this.state.announcement.location.country}
                                         onChange={this.handleLocationInputChange}
                                         name="country" />
@@ -569,32 +570,32 @@ class EditFrom extends Component {
                 </Card>
                 <Card wide style={{ marginTop: 30 }}>
                     <CardBody cascade>
-                        <CardTitle>Owner informations</CardTitle>
+                        <CardTitle>{t('edit.form.labels.owner.title')}</CardTitle>
                         <MDBContainer>
                             <MDBRow>
                                 <MDBCol md="12">
-                                    <h6>Gender</h6>
+                                    <h6>{t('edit.form.labels.owner.gender')}</h6>
                                 </MDBCol>
                                 <MDBCol md="12">
                                     <div className="form-inline">
                                         <Input
                                             onClick={() => this.onClickGenderRadio(1)}
                                             checked={this.state.genderRadio === 1 ? true : false}
-                                            label="M"
+                                            label={t('edit.form.labels.gender1')}
                                             type="radio"
                                             id="gender1"
                                         />
                                         <Input
                                             onClick={() => this.onClickGenderRadio(2)}
                                             checked={this.state.genderRadio === 2 ? true : false}
-                                            label="F"
+                                            label={t('edit.form.labels.gender2')}
                                             type="radio"
                                             id="gender2"
                                         />
                                         <Input
                                             onClick={() => this.onClickGenderRadio(3)}
                                             checked={this.state.genderRadio === 3 ? true : false}
-                                            label="Don't want to mentionne it"
+                                            label={t('edit.form.labels.gender3')}
                                             type="radio"
                                             id="gender3"
                                         />
@@ -605,7 +606,7 @@ class EditFrom extends Component {
                                 <MDBCol md="6">
                                     <MDBInput
                                         type="text"
-                                        label="User name"
+                                        label={t('edit.form.labels.name')}
                                         value={this.state.announcement.owner.name}
                                         onChange={this.handleOwnerInputChange}
                                         name="name" />
@@ -613,7 +614,7 @@ class EditFrom extends Component {
                                 <MDBCol md="6">
                                     <MDBInput
                                         type="text"
-                                        label="Phone"
+                                        label={t('edit.form.labels.phone')}
                                         value={this.state.announcement.owner.phone.toString()}
                                         onChange={this.handleOwnerInputChange}
                                         name="phone" />
@@ -623,7 +624,7 @@ class EditFrom extends Component {
                                 <MDBCol md="12">
                                     <MDBInput
                                         type="email"
-                                        label="Email"
+                                        label={t('edit.form.labels.email')}
                                         value={this.state.announcement.owner.email}
                                         onChange={this.handleOwnerInputChange}
                                         name="email" />
@@ -632,7 +633,7 @@ class EditFrom extends Component {
                             <MDBRow>
                                 <MDBCol md="6">
                                     <Input
-                                        label="Don't show my phone"
+                                        label={t('edit.form.labels.hidePhone')}
                                         type="checkbox"
                                         id="hidePhone"
                                         name="hidePhone"
@@ -641,7 +642,7 @@ class EditFrom extends Component {
                                 </MDBCol>
                                 <MDBCol md="6">
                                     <Input
-                                        label="Not to be contacted for marketing"
+                                        label={t('edit.form.labels.toBeContactedForMarketing')}
                                         type="checkbox"
                                         id="toBeContactedForMarketing"
                                         name="toBeContactedForMarketing"
@@ -664,7 +665,7 @@ class EditFrom extends Component {
                         color="primary"
                         disabled={this.state.saving}
                         onClick={this.onSave}
-                    >{this.state.saving ? "Saving..." : "Save"}</MDBBtn>
+                    >{this.state.saving ? t('edit.form.labels.saving') : t('edit.form.labels.save')}</MDBBtn>
                 </div>
             </div>
         )
@@ -679,10 +680,12 @@ function mapStateToProps(state, ownProps) {
         announcement = defaultAnnouncement;
     }
     let announcementId = ownProps.announcementId ? ownProps.announcementId : "";
+    let lng = ownProps.lng;
     return {
         marks: state.marks,
         announcement: announcement,
-        announcementId: announcementId
+        announcementId: announcementId,
+        lng: lng
     };
 }
 

@@ -18,15 +18,19 @@ class SelectInput extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { t, selectedValue } = nextProps;
+    const { t, selectedValue, lng } = nextProps;
     if (selectedValue != this.props.selectedValue)
-    this.setState((prevState) => {
-      let prevOptions = [...prevState.options];
-      let index = this.state.options.findIndex(op => op.value === t('edit.form.categories.' + selectedValue));
-      if (prevOptions[index])
-        prevOptions[index].checked = true;
-      return { options: prevOptions };
-    });
+      this.setState((prevState) => {
+        let prevOptions = [...prevState.options];
+        let index = this.state.options.findIndex(op => op.value === t('edit.form.categories.' + selectedValue));
+        if (prevOptions[index])
+          prevOptions[index].checked = true;
+        return { options: prevOptions };
+      });
+    if (lng != this.props.lng) {
+      this.setState({ options: [] });
+      this.formatOptions(t, selectedValue)
+    }
   }
 
   formatOptions(t, selectedValue) {
@@ -192,7 +196,7 @@ class SelectInput extends Component {
           color="primary"
           search={true}
           options={this.state.options}
-          selected="Choose your option"
+          selected={t('edit.form.labels.selectDefault')}
         />
         <label>
           {t('edit.form.category.label')}

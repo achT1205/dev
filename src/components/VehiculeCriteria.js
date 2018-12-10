@@ -41,10 +41,11 @@ class VehiculeCriteria extends Component {
             t,
             yearLimit,
             currentYear,
-            criteria
+            criteria,
+            lng
         } = nextProps;
-        if (selectedMark && selectedMark.id !== this.props.selectedMark.id) {
-           
+        if (selectedMark && selectedMark.id !== this.props.selectedMark.id || lng !== this.props.lng) {
+
             this.setState((prevState) => {
                 let prevOptions = [...prevState.markOptions];
                 let index = this.state.markOptions.findIndex(op => op.value === selectedMark.mark);
@@ -207,17 +208,17 @@ class VehiculeCriteria extends Component {
                             <MDBSelect getValue={handelMarksSelectChange}
                                 color="primary"
                                 options={this.state.markOptions}
-                                selected="Choose your option"
+                                selected={t('edit.form.labels.selectDefault')}
                             />
-                            <label>Marque</label>
+                            <label>{t('edit.form.labels.mark')}</label>
                         </MDBCol>
                         <MDBCol md="6">
                             <MDBSelect getValue={handelModelsSelectChange}
                                 color="primary"
                                 options={this.state.modelOptions}
-                                selected="Choose your option"
+                                selected={t('edit.form.labels.selectDefault')}
                             />
-                            <label>Model</label>
+                            <label>{t('edit.form.labels.model')}</label>
                         </MDBCol>
                     </MDBRow>
                 }
@@ -227,13 +228,13 @@ class VehiculeCriteria extends Component {
                         <MDBSelect getValue={handelYearsSelectChange}
                             color="primary"
                             options={this.state.yearOptions}
-                            selected="Choose your option"
+                            selected={t('edit.form.labels.selectDefault')}
                         />
-                        <label>Model's year</label>
+                        <label>{t('edit.form.labels.modelYear')}</label>
                     </MDBCol>
                     <MDBCol md="6">
                         <MDBInput
-                            label="Mileage (Km)"
+                            label={t('edit.form.labels.mileage')}
                             type="number"
                             step="0.01"
                             name="mileage"
@@ -247,9 +248,9 @@ class VehiculeCriteria extends Component {
                                 <MDBSelect getValue={handelFuelsSelectChange}
                                     color="primary"
                                     options={this.state.fuelOptions}
-                                    selected="Choose your option"
+                                    selected={t('edit.form.labels.selectDefault')}
                                 />
-                                <label>Fuel</label>
+                                <label>{t('edit.form.labels.fuel')} </label>
                             </MDBCol>
                         }
                         {category === 2 &&
@@ -257,9 +258,9 @@ class VehiculeCriteria extends Component {
                                 <MDBSelect getValue={handelGearBoxSelectChange}
                                     color="primary"
                                     options={this.state.gearBoxOptions}
-                                    selected="Choose your option"
+                                    selected={t('edit.form.labels.selectDefault')}
                                 />
-                                <label>Gear box</label>
+                                <label>{t('edit.form.labels.gearBox')}</label>
                             </MDBCol>
                         }
                     </MDBRow>
@@ -268,7 +269,7 @@ class VehiculeCriteria extends Component {
                     <MDBRow>
                         <MDBCol md="6">
                             <MDBInput
-                                label="Cylinder (cm3)"
+                                label={t('edit.form.labels.cylinder')}
                                 type="number"
                                 name="cylinder"
                                 value={criteria.cylinder.toString()}

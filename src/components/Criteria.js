@@ -19,7 +19,8 @@ const Criteria = (props) => {
         handelEnergyClassificationSelectChange,
         handelGesSelectChange,
         handelHasSwimingPoolSelectChange,
-        announcement } = props;
+        announcement,
+        lng } = props;
     return (
         <div>
             {announcement.category > 1 && announcement.category < 6 &&
@@ -36,6 +37,7 @@ const Criteria = (props) => {
                     handelModelsSelectChange={handelModelsSelectChange}
                     yearLimit={50}
                     currentYear={2019}
+                    lng={lng}
                 />
             }
             {announcement.category > 10 && announcement.category < 15 &&
@@ -48,6 +50,7 @@ const Criteria = (props) => {
                     handleCriteriaInputChange={handleCriteriaInputChange}
                     category={announcement.category}
                     criteria={announcement.criteria}
+                    lng={lng}
                      />
             }
             {announcement.category > 14 && announcement.category < 19 &&
@@ -55,6 +58,7 @@ const Criteria = (props) => {
                     handleCriteriaInputChange={handleCriteriaInputChange}
                     criteria={announcement.criteria}
                     handelHasSwimingPoolSelectChange={handelHasSwimingPoolSelectChange}
+                    lng={lng}
                      />
             }
         </div>

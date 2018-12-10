@@ -188,21 +188,21 @@
         "60": "Covoiturage",
         "61": "Autre"
       },
-      "fuels":{
-        "1":"Ddiesel",
-        "2":"Electrique"
+      "fuels": {
+        "1": "Ddiesel",
+        "2": "Electrique"
       },
-      "gearBox":{
-        "1":"Manual",
-        "2":"Automatique"
+      "gearBox": {
+        "1": "Manual",
+        "2": "Automatique"
       },
       "immovableTypes": {
         "1": "House",
-        "2":"Appartment"
+        "2": "Appartment"
       },
       "isEquiped": {
         "1": "Equiped",
-        "2":"Non Equiped"
+        "2": "Non Equiped"
       },
       "swimingPoolOptions": {
         "1": "Oui",
@@ -320,6 +320,48 @@
       },
       "amount": {
         "label": "Prix"
+      },
+      "labels": {
+        "announcement": "Annonce",
+        "location": "Localisation",
+        "owner": {
+          "title": "Informations du propriétaire",
+          "gender": "genre"
+        },
+        "selectDefault": "Choisissez votre option",
+        "mark": "marque",
+        "model": "modèle",
+        "modelYear": "Année du modèle",
+        "mileage": "kilométrage",
+        "fuel": "Fuel",
+        "gearBox": "Boite de vitesse",
+        "cylinder": "Cylindre (cm3)",
+        "immovableType": "Type",
+        "equiped": "équipé",
+        "immovableSize": "Taille (m2)",
+        "roomsNumber": "Nombre de chambres",
+        "energyClassification": "Classification énergétique",
+        "ges": "GES",
+        "immovableCapacity": "Capacité",
+        "numberOfVacationRooms": "Nombre de chambres",
+        "swimingPool": "Piscine",
+        "city": "ville",
+        "zipCode": "Code postal",
+        "numberOfStreet": "Numéro de rue",
+        "streetName": "Nom de la rue",
+        "address": "Adresse",
+        "placeKnownAs": "Lieu dit",
+        "country": "Pays",
+        "genre1": "M",
+        "genre2": "F",
+        "gender3": "Je ne veux pas le mentionner",
+        "name": "Nom",
+        "phone": "Téléphone",
+        "email": "Email",
+        "hidePhone": "Ne montre pas mon téléphone",
+        "toBeConteatedForMarketing": "Ne pas contacter pour le marketing",
+        "save": "enregistrer",
+        "saving": "Sauver ..."
       }
     }
   }

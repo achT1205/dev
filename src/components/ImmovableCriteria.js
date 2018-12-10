@@ -32,8 +32,8 @@ class ImmovableCriteria extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
-        const { t, criteria } = nextProps;
-        if (nextProps.criteria.immovableType != this.props.criteria.immovableType) {
+        const { t, criteria, lng } = nextProps;
+        if (nextProps.criteria.immovableType !== this.props.criteria.immovableType || lng !== this.props.lng) {
             this.setState({ immovableTypeOptions: [] });
             this.formatImmovableType(criteria.immovableType, t);
             this.setState({ isEquipedOptions: [] });
@@ -169,18 +169,18 @@ class ImmovableCriteria extends Component {
                             <MDBSelect getValue={handelImmovableTypesSelectChange}
                                 color="primary"
                                 options={this.state.immovableTypeOptions}
-                                selected="Choose your option"
+                                selected= {t('edit.form.labels.selectDefault')}
                             />
-                            <label>Type</label>
+                            <label>{t('edit.form.labels.immovableType')}</label>
                         </MDBCol>
                         {category === 12 &&
                             <MDBCol md="6">
                                 <MDBSelect getValue={handelIsEquipedSelectChange}
                                     color="primary"
                                     options={this.state.isEquipedOptions}
-                                    selected="Choose your option"
+                                    selected= {t('edit.form.labels.selectDefault')}
                                 />
-                                <label>Equiped</label>
+                                <label>{t('edit.form.labels.equiped')} </label>
                             </MDBCol>
                         }
                     </MDBRow>
@@ -188,7 +188,7 @@ class ImmovableCriteria extends Component {
                 <MDBRow>
                     <MDBCol md="6">
                         <MDBInput
-                            label="Size (m2)"
+                            label={t('edit.form.labels.immovableSize')}
                             type="number"
                             step="0.01"
                             name="sizeOfSurface"
@@ -200,9 +200,9 @@ class ImmovableCriteria extends Component {
                             <MDBSelect getValue={handelNumberOfRoomsSelectChange}
                                 color="primary"
                                 options={this.state.roomsNumberOptions}
-                                selected="Choose your option"
+                                selected= {t('edit.form.labels.selectDefault')}
                             />
-                            <label>Rooms</label>
+                            <label>{t('edit.form.labels.roomsNumber')} </label>
                         </MDBCol>
                     }
                 </MDBRow>
@@ -211,17 +211,17 @@ class ImmovableCriteria extends Component {
                         <MDBSelect getValue={handelEnergyClassificationSelectChange}
                             color="primary"
                             options={this.state.energyClassificationOptions}
-                            selected="Choose your option"
+                            selected= {t('edit.form.labels.selectDefault')}
                         />
-                        <label>Energy classification</label>
+                         <label>{t('edit.form.labels.energyClassification')} </label>
                     </MDBCol>
                     <MDBCol md="6">
                         <MDBSelect getValue={handelGesSelectChange}
                             color="primary"
                             options={this.state.gesOptions}
-                            selected="Choose your option"
+                            selected= {t('edit.form.labels.selectDefault')}
                         />
-                        <label>GES</label>
+                        <label>{t('edit.form.labels.ges')} </label>
                     </MDBCol>
                 </MDBRow>
             </div>

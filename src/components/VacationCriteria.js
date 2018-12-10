@@ -3,9 +3,6 @@ import {
     MDBRow,
     MDBCol,
     MDBSelect,
-    MDBSelectInput,
-    MDBSelectOptions,
-    MDBSelectOption,
     MDBInput,
 } from "mdbreact";
 import { translate } from 'react-i18next';
@@ -22,6 +19,13 @@ class VacationCriteria extends Component {
     componentDidMount() {
         const { t, criteria } = this.props;
         this.formatSwimingPoolOption(criteria.hasSwimingPool, t);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { t, lng, criteria } = nextProps;
+        if (lng !== this.props.lng) {
+            this.formatSwimingPoolOption(criteria.hasSwimingPool, t);
+        }
     }
 
     formatSwimingPoolOption(hasSwimingPool, t) {
@@ -54,7 +58,7 @@ class VacationCriteria extends Component {
                 <MDBRow>
                     <MDBCol md="6">
                         <MDBInput
-                            label="Capacity"
+                            label={t('edit.form.labels.immovableCapacity')}
                             name="numberOfPeople"
                             type="number"
                             value={criteria.numberOfPeople.toString()}
@@ -66,14 +70,14 @@ class VacationCriteria extends Component {
                         <MDBSelect getValue={handelHasSwimingPoolSelectChange}
                             color="primary"
                             options={this.state.swimingPoolOptions}
-                            selected="Choose your option"
+                            selected={t('edit.form.labels.selectDefault')}
                         />
-                        <label>Swiming pool</label>
+                        <label>{t('edit.form.labels.swimingPool')}</label>
                     </MDBCol>
                     <MDBCol md="6">
                         <MDBInput
                             name="numberOfVacationRooms"
-                            label="number of rooms"
+                            label={t('edit.form.labels.numberOfVacationRooms')}
                             type="number"
                             value={criteria.numberOfVacationRooms.toString()}
                             onChange={handleCriteriaInputChange} />

@@ -321,7 +321,48 @@
       "amount": {
         "label": "Amout"
       },
-      "criteria": {}
+      "labels": {
+        "announcement": "Announcement",
+        "location": "Location",
+        "owner": {
+          "title": "Owner informations",
+          "gender": "Gender"
+        },
+        "selectDefault": "Choose your option",
+        "mark": "Mark",
+        "model": "Model",
+        "modelYear": "Model's year",
+        "mileage": "Mileage (Km)",
+        "fuel": "Fuel",
+        "gearBox": "Gear box",
+        "cylinder": "Cylinder (cm3)",
+        "immovableType": "Type",
+        "equiped": "Equiped",
+        "immovableSize": "Size (m2)",
+        "roomsNumber": "Number of rooms",
+        "energyClassification": "Energy classification",
+        "ges": "GES",
+        "immovableCapacity": "Capacity",
+        "numberOfVacationRooms": "Number of rooms",
+        "swimingPool": "Swiming pool",
+        "city": "City",
+        "zipCode": "Zip code",
+        "numberOfStreet": "Street number",
+        "streetName": "Name of the street",
+        "address": "Address",
+        "placeKnownAs": "Place known as",
+        "country": "Country",
+        "gender1": "M",
+        "gender2": "F",
+        "gender3": "Don't want to mentionne it",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "hidePhone": "Don't show my phone",
+        "toBeContactedForMarketing": "Not to be contacted for marketing",
+        "save": "Save",
+        "saving": "Saving ..."
+      }
     }
   }
 }
