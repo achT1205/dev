@@ -10,6 +10,15 @@
 .App-logo{
 	width: 10rem;
 }
+.flags{
+	position: absolute;
+    margin-top: -16px;	
+}
+
+.flag{
+	margin:3px;
+	cursor: pointer;
+}
 
 .flyout {
 	display:flex;

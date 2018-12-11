@@ -14,10 +14,11 @@ import {
   DropdownItem,
   Fa
 } from "mdbreact";
-import LanguageSelector from './components/LanguageSelector';
 import { BrowserRouter as Router } from "react-router-dom";
 import { translate } from 'react-i18next';
 import "./index.css";
+import "./flags/flags.min.css";
+import logo from "./flags/blank.gif"
 
 import Routes from "./Routes";
 
@@ -38,10 +39,9 @@ class App extends Component {
   closeCollapse = collapseID => () =>
     this.state.collapseID === collapseID && this.setState({ collapseID: "" });
 
-  handleChange = (event) => {
+  handleChange = (lng) => {
     const { i18n } = this.props;
-    this.setState({ [event.target.name]: event.target.value });
-    i18n.changeLanguage(event.target.value);
+    i18n.changeLanguage(lng);
   };
 
 
@@ -127,7 +127,10 @@ class App extends Component {
                   <NavLink className="waves-effect waves-light d-flex align-items-center" to="#!">1<Fa icon="envelope" className="ml-1" /></NavLink>
                 </NavItem>
                 <NavItem>
-                  <LanguageSelector handleChange={this.handleChange} />
+                  <div className="flags">
+                    <img src={logo} onClick={() => this.handleChange("fr")} className="flag flag-fr" alt="French" />
+                    <img src={logo} onClick={() => this.handleChange("us")} className="flag flag-us" alt="English" />
+                  </div>
                 </NavItem>
                 <NavItem>
                   <Dropdown>
