@@ -44,7 +44,7 @@ class VehiculeCriteria extends Component {
             criteria,
             lng
         } = nextProps;
-        if (selectedMark && selectedMark.id !== this.props.selectedMark.id || lng !== this.props.lng) {
+        if ((selectedMark && selectedMark.id !== this.props.selectedMark.id) || (lng !== this.props.lng)) {
 
             this.setState((prevState) => {
                 let prevOptions = [...prevState.markOptions];

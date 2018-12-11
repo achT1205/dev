@@ -190,7 +190,8 @@
       },
       "fuels": {
         "1": "Diesel",
-        "2": "Electrical"
+        "2": "Electric",
+        "3":"Gasoline"
       },
       "immovableTypes": {
         "1": "House",
@@ -202,11 +203,11 @@
       },
       "isEquiped": {
         "1": "Equiped",
-        "2": "Non Equiped"
+        "2": "Not equiped"
       },
       "gearBox": {
         "1": "Manual",
-        "2": "Automatique"
+        "2": "Automatic"
       },
       "marks": {
         "1": "Abarth",

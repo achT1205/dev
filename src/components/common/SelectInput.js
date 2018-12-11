@@ -18,8 +18,8 @@ class SelectInput extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { t, selectedValue, lng } = nextProps;
-    if (selectedValue != this.props.selectedValue)
+    const { t, selectedValue, lng, i18n } = nextProps;
+    if (selectedValue !== this.props.selectedValue)
       this.setState((prevState) => {
         let prevOptions = [...prevState.options];
         let index = this.state.options.findIndex(op => op.value === t('edit.form.categories.' + selectedValue));
@@ -27,7 +27,8 @@ class SelectInput extends Component {
           prevOptions[index].checked = true;
         return { options: prevOptions };
       });
-    if (lng != this.props.lng) {
+    if (lng !== this.props.lng) {
+      i18n.changeLanguage(lng);
       this.setState({ options: [] });
       this.formatOptions(t, selectedValue)
     }

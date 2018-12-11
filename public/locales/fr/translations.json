@@ -190,7 +190,8 @@
       },
       "fuels": {
         "1": "Ddiesel",
-        "2": "Electrique"
+        "2": "Electrique",
+        "3":"Essence"
       },
       "gearBox": {
         "1": "Manual",
@@ -201,8 +202,8 @@
         "2": "Appartment"
       },
       "isEquiped": {
-        "1": "Equiped",
-        "2": "Non Equiped"
+        "1": "Equipé",
+        "2": "Non équipé"
       },
       "swimingPoolOptions": {
         "1": "Oui",

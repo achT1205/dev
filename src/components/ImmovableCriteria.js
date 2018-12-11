@@ -3,9 +3,6 @@ import {
     MDBRow,
     MDBCol,
     MDBSelect,
-    MDBSelectInput,
-    MDBSelectOptions,
-    MDBSelectOption,
     MDBInput,
 } from "mdbreact";
 import { translate } from 'react-i18next';

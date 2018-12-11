@@ -31,7 +31,6 @@ class EditFrom extends Component {
             genderRadio: 0,
             typeRadio: 0,
             category: 0,
-            errors: {},
             title: "",
             criteria: Object.assign({}, {}),
             selectedMark: this.props.announcement.criteria && this.props.announcement.criteria.mark ?
@@ -168,10 +167,10 @@ class EditFrom extends Component {
 
 
     getGearBoxId(label) {
-        if (label === "Manual") {
+        if (label === "Manual" || label ==="Manuelle") {
             return 1;
         };
-        if (label === "Automatique") {
+        if (label === "Automatique"|| label === "Automatic") {
             return 2;
         };
     }
@@ -180,8 +179,11 @@ class EditFrom extends Component {
         if (label === "Diesel") {
             return 1;
         };
-        if (label === "Electrical" || label === "Electrique") {
+        if (label === "Electric" || label === "Electrique") {
             return 2;
+        };
+        if (label === "Essence" || label === "Gasoline") {
+            return 3;
         };
     }
 
@@ -201,9 +203,9 @@ class EditFrom extends Component {
         }
     }
 
-    getEnergyClassificationId(w) {
+    getEnergyClassificationId(word) {
         let list = ["A", "B", "C", "D", "E", "F", "G", "I"];
-        return list.findIndex(w => w === w) + 1;
+        return list.findIndex(w => w === word) + 1;
     }
 
 
@@ -215,9 +217,9 @@ class EditFrom extends Component {
         }
     }
 
-    getGesId(w) {
+    getGesId(word) {
         let list = ["A", "B", "C", "D", "E", "F", "G", "I"];
-        return list.findIndex(w => w === w) + 1;
+        return list.findIndex(w => w === word) + 1;
     }
 
 
@@ -229,10 +231,10 @@ class EditFrom extends Component {
         }
     }
     isEquiped(label) {
-        if (label === "Equiped") {
+        if (label === "Equiped" || label ==="Equipé") {
             return true;
         };
-        if (label === "Non Equiped") {
+        if (label === "Non Equiped" || label === "Non équipé") {
             return false;
         };
     }
@@ -465,7 +467,6 @@ class EditFrom extends Component {
                                     <MDBCol md="12">
                                         <MDBInput
                                             label={t('edit.form.amount.label')}
-                                            type="text"
                                             name="amount"
                                             type="number"
                                             value={this.state.announcement.amount.toString()}
