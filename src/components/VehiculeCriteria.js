@@ -6,6 +6,7 @@ import {
     MDBInput,
 } from "mdbreact";
 import { translate } from 'react-i18next';
+import getCarMarksOptions from './common/carMarkOptions';
 const iconUrlBabe = "https://images.caradisiac.com/logos-ref/auto/auto--";
 const defaultIconUrl = "https://static.caradisiac.com/img_site/mobileResponsive/logo_marqueDefault.gif";
 const extension = ".png";
@@ -29,6 +30,9 @@ class VehiculeCriteria extends Component {
             criteria,
             yearLimit,
             currentYear } = this.props;
+            
+            let ops = getCarMarksOptions();
+            this.setState({ markOptions: ops });
         this.formatMarkOptions(selectedMark, marks);
         this.formatModelOptions(selectedMark, criteria.model, t);
         this.formatYearOfModel(yearLimit, currentYear, criteria.yearOfModel);
@@ -80,22 +84,19 @@ class VehiculeCriteria extends Component {
         }
     }
 
+
     formatMarkOptions(selectedMark, marks) {
         this.setState((prevState) => {
             let prevOptions = [...prevState.markOptions];
-            marks.forEach((mark) => {
-                let option = {
-                    checked: selectedMark && selectedMark.mark === mark.mark ? true : false,
-                    disabled: false,
-                    icon: !mark.shortName ? defaultIconUrl : iconUrlBabe + mark.shortName + extension,
-                    value: mark.mark
-                };
-                prevOptions.push(option);
-
+            prevOptions.forEach((op) => {
+                let mark = marks && marks.length >0 ?  marks.find(m => m.mark === op.value) : [];
+                    op.icon = !mark.shortName ? defaultIconUrl : iconUrlBabe + mark.shortName + extension;
+                if (selectedMark  && selectedMark === op.value) {
+                    op.checked = true;
+                }
             });
             return { markOptions: prevOptions };
-        })
-    }
+        })}
 
     formatModelOptions(selectedMark, selectedModel, t) {
         if (selectedMark && selectedMark.id) {

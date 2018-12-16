@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import {
-    MDBRow,
-    MDBCol,
     MDBSelect,
-    MDBInput,
 } from "mdbreact";
 import getCarMarksOptions from './carMarkOptions';
 import { translate } from 'react-i18next';
@@ -44,8 +41,7 @@ class QueryCarMarksSelect extends Component {
                 }
             });
             return { markOptions: prevOptions };
-        })
-    }
+        })}
   
     render() {
         const {

@@ -7,7 +7,7 @@ import { compose } from "recompose";
 import defaultAnnouncement from './announcement';
 import { MDBContainer, MDBRow, MDBCol, Card, CardBody, MDBInput, Input, MDBFileInput, MDBBtn, CardTitle, toast, ToastContainer } from "mdbreact";
 
-import SelectInput from './common/SelectInput';
+import CategorySelectInput from './common/CategorySelectInput';
 import TextImput from './common/TextImput';
 import Criteria from './Criteria';
 import { translate } from 'react-i18next';
@@ -382,7 +382,7 @@ class EditFrom extends Component {
                             <MDBContainer>
                                 <MDBRow>
                                     <MDBCol md="6">
-                                        <SelectInput
+                                        <CategorySelectInput
                                             multiple={false}
                                             search={true}
                                             hideLabe={false}

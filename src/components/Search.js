@@ -4,7 +4,8 @@ import QueryCategoriesSelect from '../components/common/QueryCategoriesSelect';
 import categoryArray from '../api/categories';
 import QueryCarMarksSelect from './common/QueryCarMarksSelect';
 import QueryCarModelSelect from './common/QueryCarModelSelect';
-import './Search.css'
+import './Search.css';
+import VehiculOtherFilters from "./VehiculOtherFilters";
 
 class Search extends Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class Search extends Component {
             categories: ["0"],
             marks: [],
             models: [],
+            yearsOfModels: [],
+            fuels:[],
             offer: false,
             demande: false,
             typeOptions: [
@@ -52,7 +55,7 @@ class Search extends Component {
             let categories = [];
             values.forEach((value) => {
                 let id = this.getCategoryId(value);
-                categories.push(id.toString());    
+                categories.push(id.toString());
             });
             return { categories: categories }
         });
@@ -64,9 +67,9 @@ class Search extends Component {
             values.forEach((value) => {
                 marks.push(value);
             });
-            this.setState({ marks: marks });
-            this.setState({ models: [] });
         }
+        this.setState({ marks: marks });
+        this.setState({ models: [] });
     }
 
     handelModelsSelectChange = (values) => {
@@ -76,6 +79,26 @@ class Search extends Component {
                 models.push(value);
             });
             this.setState({ models: models });
+        }
+    }
+
+    handelYearsSelectChange = (values) => {
+        let yearsOfModels = [];
+        if (values && values.length > 0) {
+            values.forEach((value) => {
+                yearsOfModels.push(value);
+            });
+            this.setState({ yearsOfModels: yearsOfModels });
+        }
+    }
+
+    handelFuelsSelectChange = (values) => {
+        let fuels = [];
+        if (values && values.length > 0) {
+            values.forEach((value) => {
+                fuels.push(value);
+            });
+            this.setState({ fuels: fuels });
         }
     }
 
@@ -189,6 +212,40 @@ class Search extends Component {
                                                     handelModelsSelectChange={this.handelModelsSelectChange}
                                                     selectedMarks={this.state.marks}
                                                     selectedModels={this.state.models}
+                                                    lng={lng}
+                                                />
+                                            </MDBCol>
+                                        </div>
+                                        <Badge className="float-left" tag="a" href="#!" color="secondary">Clean</Badge>
+                                        <Badge className="float-right" tag="a" href="#!" color="primary">Apply</Badge>
+                                    </MDBDropdownMenu>
+                                </MDBDropdown>
+                            }
+
+                            {
+                                (this.state.categories.includes('2') ||
+                                    this.state.categories.includes('3') ||
+                                    this.state.categories.includes('4') ||
+                                    this.state.categories.includes('5')) &&
+                                <MDBDropdown>
+                                    <MDBCol md="2">
+                                        <MDBDropdownToggle color="primary">
+                                            More
+                                </MDBDropdownToggle>
+                                    </MDBCol>
+                                    <MDBDropdownMenu basic>
+                                        <div style={{ width: 500, height: 200 }}>
+                                            <MDBCol md="10">
+                                                <VehiculOtherFilters
+                                                    multiple={true}
+                                                    search={true}
+                                                    hideLabe={false}
+                                                    selectedYear={2015}
+                                                    yearLimit={30}
+                                                    currentYear={2019}
+                                                    selectedfuel={1}
+                                                    handelFuelsSelectChange ={this.handelFuelsSelectChange}
+                                                    handelYearsSelectChange={this.handelYearsSelectChange}
                                                     lng={lng}
                                                 />
                                             </MDBCol>
