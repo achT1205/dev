@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as announcementsActions from "../../actions/announcementsActions";
 import ListRow from '../../components/ListRow';
+import Search from '../../components/Search';
 
 
 class OfferPage extends React.Component {
@@ -23,11 +24,11 @@ class OfferPage extends React.Component {
 
   componentWillMount() {
     this.props.actions
-    .loadAnnouncements(1)
-    .then((offers) => this.setState({ offers: Object.assign({}, offers) }))
-    .catch(error => {
-       console.log(error)
-    });
+      .loadAnnouncements(1)
+      .then((offers) => this.setState({ offers: Object.assign({}, offers) }))
+      .catch(error => {
+        console.log(error)
+      });
   }
 
   render() {
@@ -36,8 +37,9 @@ class OfferPage extends React.Component {
     return (
       <div>
         <Container>
+          <Search />
           {length >= 0 && <ListRow announcements={offers.slice(0, 3)} />}
-          {length >3 && <ListRow announcements={offers.slice(3, 6)} />}
+          {length > 3 && <ListRow announcements={offers.slice(3, 6)} />}
           {length > 6 && <ListRow announcements={offers.slice(6, 9)} />}
           {length > 9 && <ListRow announcements={offers.slice(9, 12)} />}
         </Container>

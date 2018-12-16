@@ -167,10 +167,10 @@ class EditFrom extends Component {
 
 
     getGearBoxId(label) {
-        if (label === "Manual" || label ==="Manuelle") {
+        if (label === "Manual" || label === "Manuelle") {
             return 1;
         };
-        if (label === "Automatique"|| label === "Automatic") {
+        if (label === "Automatique" || label === "Automatic") {
             return 2;
         };
     }
@@ -231,7 +231,7 @@ class EditFrom extends Component {
         }
     }
     isEquiped(label) {
-        if (label === "Equiped" || label ==="Equipé") {
+        if (label === "Equiped" || label === "Equipé") {
             return true;
         };
         if (label === "Non Equiped" || label === "Non équipé") {
@@ -373,7 +373,6 @@ class EditFrom extends Component {
 
     render() {
         const { t, marks, lng } = this.props;
-
         return (
             <div>
                 <Card wide>
@@ -384,6 +383,9 @@ class EditFrom extends Component {
                                 <MDBRow>
                                     <MDBCol md="6">
                                         <SelectInput
+                                            multiple={false}
+                                            search={true}
+                                            hideLabe={false}
                                             handelCategorySelectChange={this.handelCategorySelectChange}
                                             selectedValue={this.state.announcement.category.toString()}
                                             lng={lng}
@@ -675,7 +677,7 @@ class EditFrom extends Component {
 
 function mapStateToProps(state, ownProps) {
     let announcement = {};
-    if (state.announcements && state.announcements.length === 1 && state.announcements[0].id) {
+    if (state.announcements && state.announcements.length === 1 && (state.announcements[0].id || state.announcements[0].category)) {
         announcement = state.announcements[0];
     } else {
         announcement = defaultAnnouncement;

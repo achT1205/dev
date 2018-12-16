@@ -3,10 +3,10 @@ import {
   MDBSelect
 } from "mdbreact";
 import { translate } from 'react-i18next';
-import getCategoryOptions from './categoryOptions';
+import getCategoryOptions from './categoryOptions'; 
 import './SelectInput.css';
 
-class SelectInput extends Component {
+class QueryCategoriesSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,29 +15,21 @@ class SelectInput extends Component {
   }
 
   componentDidMount() {
-    const { t, selectedValue } = this.props
+    const { t, selectedValues } = this.props
     let ops = getCategoryOptions(t);
     this.setState({ options: ops })
-    this.formatOptions(t, selectedValue)
+    this.formatOptions(t, selectedValues)
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { t, selectedValue, lng, i18n } = nextProps;
-    if (lng !== this.props.lng) {
-      i18n.changeLanguage(lng);
-      let ops = getCategoryOptions(t);
-      this.setState({ options: ops })
-      this.formatOptions(t, selectedValue)
-    }
-  }
-
-  formatOptions(t, selectedValue) {
+  formatOptions(t, selectedValues) {
     this.setState(prevState => {
       let prevOptions = [...prevState.options];
-      prevOptions.forEach((op) => {
-        if (op.value === t('edit.form.categories.' + selectedValue)) {
-          op.checked = true;
-        }
+      selectedValues.forEach((val) => {
+        prevOptions.forEach((op) => {
+          if (op.value === t('edit.form.categories.' + val)) {
+            op.checked = true;
+          }
+        });
       });
       return { options: prevOptions };
     });
@@ -62,4 +54,4 @@ class SelectInput extends Component {
     );
   }
 }
-export default translate('translations')(SelectInput);
+export default translate('translations')(QueryCategoriesSelect);
